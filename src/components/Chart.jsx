@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Highcharts from 'highcharts';
+
+import { requestStockData } from '../actions/stockActions';
 
 class Chart extends React.Component {
 
@@ -12,16 +15,15 @@ class Chart extends React.Component {
   componentDidMount() {
       this.chart = new Highcharts[this.props.type || "Chart"](
           this.refs.chart,
-          this.props.options
+          this.options()
       );
   }
 
   options(){
     let { stockData } = this.props;
-    const prices = stockData.map(day => {
+    const data = stockData.map(day => {
         return [Date.parse(day.Date), parseInt(day.Close)];
-      }
-    ).reverse();
+    }).reverse();
     const options = {
         title: {
             text: 'Apple'
@@ -42,7 +44,7 @@ class Chart extends React.Component {
         },
         series: [{
             yAxis: 0,
-            data: prices
+            data
         }]
     };
     return options;
@@ -59,4 +61,15 @@ class Chart extends React.Component {
   }
 }
 
-export default Chart;
+const mapStateToProps = (state) => ({
+  stockData: state.default.stockData || []
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  requestStockData: () => dispatch(requestStockData())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Chart);
