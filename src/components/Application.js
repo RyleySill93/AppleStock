@@ -22,10 +22,11 @@ class Application extends Component {
   }
 
   content() {
+    const { stockData } = this.props;
     if (this.state.loading) {
       //show loading spinner
     } else {
-      return <Chart />;
+      return <Chart stockData={stockData}/>;
     }
   }
 
@@ -39,7 +40,8 @@ class Application extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  loading: state.default.loading
+  loading: state.default.loading,
+  stockData: state.default.stockData
 });
 
 const mapDispatchToProps = (dispatch) => ({
