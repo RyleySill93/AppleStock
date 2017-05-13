@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Highcharts from 'highcharts';
 
+import ReactGridLayout from 'react-grid-layout';
+
+
 class Chart extends React.Component {
 
   constructor(props) {
@@ -57,7 +60,7 @@ class Chart extends React.Component {
 
   render() {
     return (
-        <div ref="chart"></div>
+        <div ref="chart" id="chart" style={{width: '684px'}}></div>
     );
   }
 }

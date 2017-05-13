@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactTable from 'react-table';
 
+import ReactGridLayout from 'react-grid-layout';
+
+
 class Table extends React.Component {
 
   render () {
@@ -13,7 +16,7 @@ class Table extends React.Component {
       });
 
     const columns = [{
-      Header: 'Name',
+      Header: 'Apple Stock Price',
       columns: [{
         Header: 'Date',
         accessor: 'date'

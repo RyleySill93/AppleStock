@@ -1,0 +1,36 @@
+body {
+  background-color: #efeef1
+}
+
+#chart div svg rect {
+  fill: transparent;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #17141f;
+  color: #fff;
+  align-items: center;
+  display: flex;
+  box-shadow: 0px 5px 5px #888888;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin-left: 20px;
+  font-weight: 100;
+}
+
+.header a {
+  font-size: 36px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 16px;
+}
+
+.layout {
+  align-self: center;
+  display: flex;
+}
