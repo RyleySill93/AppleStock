@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import Chart from './Chart';
 
+import { requestStockData } from '../actions/stockActions.js';
+
 class Application extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,10 @@ class Application extends Component {
     if (this.props.loading !== nextProps.loading) {
       this.setState({ loading: nextProps.loading });
     }
+  }
+
+  componentDidMount() {
+    this.props.requestStockData();
   }
 
   content() {
@@ -36,6 +42,11 @@ const mapStateToProps = (state) => ({
   loading: state.default.loading
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  requestStockData: () => dispatch(requestStockData())
+});
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Application);

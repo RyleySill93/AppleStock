@@ -2,15 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Highcharts from 'highcharts';
 
-import { requestStockData } from '../actions/stockActions';
-
 class Chart extends React.Component {
 
   constructor(props) {
     super(props);
     this.options = this.options.bind(this);
   }
-
 
   componentDidMount() {
     this.chart = new Highcharts[this.props.type || "Chart"](
@@ -65,11 +62,6 @@ const mapStateToProps = (state) => ({
   stockData: state.default.stockData || []
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  requestStockData: () => dispatch(requestStockData())
-});
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Chart);
