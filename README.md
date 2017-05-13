@@ -18,3 +18,11 @@ the corresponding date on the x axis. This component relies on [Highcharts](http
 animate the chart.
 * `Table` - Renders a table with Apple's stock price in one column and the
 corresponding date in the other. Relies on [React Table](https://github.com/tannerlinsley/react-table).
+
+## Running the Apple Tracker Locally
+
+* `git clone https://github.com/RyleySill93/AppleStock.git`
+* `cd AppleStock`
+* `npm install`
+* `npm start`
+* Navigate to "http://localhost:3000/" in your browser
