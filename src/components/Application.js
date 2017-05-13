@@ -7,12 +7,6 @@ class Application extends Component {
   }
 
   render() {
-    const {
-      history,
-      location,
-      children,
-    } = this.props;
-
     return (
       <div>
         testing
