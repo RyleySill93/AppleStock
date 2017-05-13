@@ -2,13 +2,15 @@ import React from 'react';
 import ReactTable from 'react-table';
 
 class Table extends React.Component {
+
   render () {
 
     let { stockData } = this.props;
 
     const data = stockData.map(day => {
-        return { date: day.Date, price: `$ ${parseInt(day.Close)}` };
-      }).reverse();
+        return { date: day.Date,
+                 price: `$ ${parseFloat(day.Adj_Close).toFixed(2)}` };
+      });
 
     const columns = [{
       Header: 'Name',
@@ -16,7 +18,7 @@ class Table extends React.Component {
         Header: 'Date',
         accessor: 'date'
       }, {
-        Header: 'Price',
+        Header: 'Adjusted Close',
         accessor: 'price'
       }]
     }];

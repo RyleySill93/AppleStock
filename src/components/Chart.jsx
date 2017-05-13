@@ -16,10 +16,14 @@ class Chart extends React.Component {
     );
   }
 
+  parsePrice(day) {
+    return parseFloat(parseFloat(day.Adj_Close).toFixed(2));
+  }
+
   options(){
     let { stockData } = this.props;
     const data = stockData.map(day => {
-        return [Date.parse(day.Date), parseInt(day.Close)];
+        return [Date.parse(day.Date), this.parsePrice(day)];
     }).reverse();
     const options = {
         title: {
