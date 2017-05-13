@@ -4,6 +4,6 @@ import stockReducer from './stockReducer';
 import loadingReducer from './loadingReducer';
 
 export default combineReducers({
-  stock: stockReducer,
+  stockData: stockReducer,
   loading: loadingReducer
 });
