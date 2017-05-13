@@ -27,7 +27,7 @@ class Application extends Component {
     debugger
     const { stockData } = this.props;
     if (this.state.loading) {
-      return (<div className='mainLoader'></div>);
+      return (<div className='loader'></div>);
       debugger
     } else {
       return (
@@ -45,7 +45,7 @@ class Application extends Component {
 
   render() {
     return (
-      <div>
+      <div id="main">
         <header className="header">
           <h1> Apple Tracker</h1>
           <a href="https://github.com/RyleySill93/twitch_roulette" target="_blank">
