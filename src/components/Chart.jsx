@@ -23,7 +23,7 @@ class Chart extends React.Component {
     }).reverse();
     const options = {
         title: {
-            text: 'Apple'
+            text: 'Apple Stock Price'
         },
         yAxis: {
             title: {
@@ -40,7 +40,7 @@ class Chart extends React.Component {
             type: 'line'
         },
         series: [{
-            yAxis: 0,
+            name: 'AAPL',
             data
         }]
     };

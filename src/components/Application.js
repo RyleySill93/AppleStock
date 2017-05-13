@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import Chart from './Chart';
+import Table from './Table';
 
 import { requestStockData } from '../actions/stockActions.js';
 
@@ -26,7 +27,12 @@ class Application extends Component {
     if (this.state.loading) {
       //show loading spinner
     } else {
-      return <Chart stockData={stockData}/>;
+      return (
+        <div>
+          <Chart stockData={stockData}/>;
+          <Table stockData={stockData}/>;
+        </div>
+      );
     }
   }
 

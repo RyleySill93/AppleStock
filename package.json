@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
-    "highcharts": "^5.0.11"
+    "highcharts": "^5.0.11",
+    "react-table": "^6.0.1"
   }
 }
