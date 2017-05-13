@@ -13,10 +13,10 @@ class Chart extends React.Component {
 
 
   componentDidMount() {
-      this.chart = new Highcharts[this.props.type || "Chart"](
-          this.refs.chart,
-          this.options()
-      );
+    this.chart = new Highcharts[this.props.type || "Chart"](
+        this.refs.chart,
+        this.options()
+    );
   }
 
   options(){
@@ -51,13 +51,13 @@ class Chart extends React.Component {
   }
 
   componentWillUnmount() {
-      this.chart.destroy();
+    this.chart.destroy();
   }
 
   render() {
-      return (
-          <div ref="chart"></div>
-      );
+    return (
+        <div ref="chart"></div>
+    );
   }
 }
 
