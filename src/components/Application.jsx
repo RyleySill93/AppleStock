@@ -24,9 +24,11 @@ class Application extends Component {
   }
 
   content() {
+    debugger
     const { stockData } = this.props;
     if (this.state.loading) {
-      //show loading spinner
+      return (<div className='mainLoader'></div>);
+      debugger
     } else {
       return (
         <ReactGridLayout className="layout" cols={20} rowHeight={30} width={1440}>
