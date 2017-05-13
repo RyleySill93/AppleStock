@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import ReactGridLayout from 'react-grid-layout';
 
 import Chart from './Chart';
 import Table from './Table';
@@ -28,10 +29,14 @@ class Application extends Component {
       //show loading spinner
     } else {
       return (
-        <div>
-          <Chart stockData={stockData}/>;
-          <Table stockData={stockData}/>;
-        </div>
+        <ReactGridLayout className="layout" cols={12} rowHeight={30} width={1200}>
+          <div key="a" data-grid={{x: 0, y: 0, w: 7, h: 2}}>
+            {this.state.loading ? "" : <Chart stockData={stockData}/>}
+          </div>
+          <div key="b" data-grid={{x: 7, y: 0, w: 5, h: 2}}>
+            {this.state.loading ? "" : <Table stockData={stockData}/>}
+          </div>
+        </ReactGridLayout>
       );
     }
   }
